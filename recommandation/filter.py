@@ -1,4 +1,4 @@
-import api_moviedb
+from recommandation.moviedb import info_movie
 
 def filter_movie_list( list_movie, dict_filter):
     res=[]

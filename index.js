@@ -154,9 +154,13 @@ function click(d) {
         myTable.rows[4].cells[1].innerHTML = d.genres;
     }
 
-    if (d.pic) {
+    console.log(d.filename)
+    if (d.filename !== "") {
         var myPic = document.getElementById('pic');
-        myPic.setAttribute("src",d.pic);
+        myPic.setAttribute("src",d.filename);
+    } else {
+        var myPic = document.getElementById('pic');
+        myPic.setAttribute("src","none.png");
     }
 
 }

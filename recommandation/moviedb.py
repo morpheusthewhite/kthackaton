@@ -1,6 +1,5 @@
 import tmdbsimple as tmdb
 
-name = 'Kick-Ass 2'
 
 def info_movie(name):
 
@@ -42,16 +41,7 @@ def info_movie(name):
     dictionnaire["release_date"]=release_date
     dictionnaire["actor"]=actor
     dictionnaire["genres"]=genres
+    dictionnaire["name"]=name
 
     return(dictionnaire)
-
-
-
-
-
-
-
-
-
-
 

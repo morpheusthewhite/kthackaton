@@ -728,6 +728,3 @@ def recommend_by_title(title):
             cleaned_films = list(map(lambda elem: elem[0], recommanded_films))
             return cleaned_films
 
-
-title = input("Which film do you want to have recommandation for? ")
-print(recommend_by_title(title))
