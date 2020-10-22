@@ -157,7 +157,7 @@ function click(d) {
     console.log(d.filename)
     if (d.filename !== "") {
         var myPic = document.getElementById('pic');
-        myPic.setAttribute("src",d.filename);
+        myPic.setAttribute("src","img/" + d.filename);
     } else {
         var myPic = document.getElementById('pic');
         myPic.setAttribute("src","img/none.png");
