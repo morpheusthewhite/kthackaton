@@ -10,19 +10,16 @@ def info_movie(name):
 
     for elt in response["results"]:
         print(elt["title"])
-        if elt["title"]== name:
+        if elt["title"] == name:
             s = elt
 
     movie = tmdb.Movies(s["id"])
-    print("\n\n")
 
-    actor=[]
-    director=[]
-    runtime=0
-    release_date=0
+    actor = []
+    director = []
     reponse = movie.info()
     runtime = movie.runtime
-    genres=[]
+    genres = []
     release_date = reponse["release_date"]
     for elt in reponse["genres"]:
         genres.append(elt["name"])
@@ -32,16 +29,16 @@ def info_movie(name):
     for truc in reponse["cast"]:
         actor.append(truc["name"])
     for truc in reponse["crew"]:
-        if truc["job"]=="Director":
+        if truc["job"] == "Director":
             director = truc["name"]
 
-    dictionnaire={}
-    dictionnaire["director"]=director
-    dictionnaire["runtime"]=runtime
-    dictionnaire["release_date"]=release_date
-    dictionnaire["actor"]=actor
-    dictionnaire["genres"]=genres
-    dictionnaire["name"]=name
+    dictionnaire = dict()
+    dictionnaire["director"] = director
+    dictionnaire["runtime"] = runtime
+    dictionnaire["release_date"] = release_date
+    dictionnaire["actor"] = actor
+    dictionnaire["genres"] = genres
+    dictionnaire["name"] = name
 
-    return(dictionnaire)
+    return dictionnaire
 
