@@ -160,7 +160,7 @@ function click(d) {
         myPic.setAttribute("src",d.filename);
     } else {
         var myPic = document.getElementById('pic');
-        myPic.setAttribute("src","none.png");
+        myPic.setAttribute("src","img/none.png");
     }
 
 }
