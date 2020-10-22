@@ -84,7 +84,7 @@ def convert_to_original_format(movies, credits):
     return tmdb_movies
 
 from subprocess import check_output
-print(check_output(["ls", "../input/tmdb-movie-metadata/"]).decode("utf8"))
+print(check_output(["ls", "input/tmdb-movie-metadata/"]).decode("utf8"))
 
 import numpy as np
 import matplotlib as mpl
@@ -103,8 +103,8 @@ warnings.filterwarnings('ignore')
 PS = nltk.stem.PorterStemmer()
 #__________________
 # load the dataset
-credits = load_tmdb_credits("../input/tmdb-movie-metadata/tmdb_5000_credits.csv")
-movies = load_tmdb_movies("../input/tmdb-movie-metadata/tmdb_5000_movies.csv")
+credits = load_tmdb_credits("input/tmdb-movie-metadata/tmdb_5000_credits.csv")
+movies = load_tmdb_movies("input/tmdb-movie-metadata/tmdb_5000_movies.csv")
 df_initial = convert_to_original_format(movies, credits)
 print('Shape:',df_initial.shape)
 #__________________________________________
@@ -632,6 +632,7 @@ def extract_parameters(df, liste_films):
 
     return parametres_films
 
+
 def sequel(titre_1, titre_2):    
     if fuzz.ratio(titre_1, titre_2) > 50 or fuzz.token_set_ratio(titre_1, titre_2) > 50:
         return True
@@ -713,12 +714,6 @@ def find_similarities(df, id_entry, del_sequels = True, verbose = False):
             print("nº{:<2}     -> {:<30}".format(i+1, s[0]))
 
     return film_selection
-
-# dum = find_similarities(df, 2, del_sequels = True, verbose = True)
-
-# selection = dict()
-# for i in range(0, 20, 3):
-    # selection[i] = find_similarities(df, i, del_sequels = True, verbose = False)
 
 
 def recommend_by_title(title):
