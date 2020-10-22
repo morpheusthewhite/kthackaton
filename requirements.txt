@@ -1,0 +1,7 @@
+pandas < 0.22.0
+scikit-learn
+fuzzywuzzy
+nltk
+seaborne
+numpy
+matplotlib
